@@ -34,14 +34,8 @@ export default function App() {
         >
           <QueueAnim delay={800}>
             <div
-              className="floating"
+              className="floating title-text"
               key="a"
-              style={{
-                fontSize: 115,
-                fontWeight: "bold",
-                color: "white",
-                opacity: 0.8,
-              }}
             >
               {document.domain.replace("www.", "").split(".")[0]}
               <label
@@ -55,13 +49,7 @@ export default function App() {
             </div>
             <div
               key="b"
-              style={{
-                fontSize: 25,
-                marginTop: -45,
-                fontWeight: "bold",
-                color: "white",
-              }}
-              className="floating"
+              className="subtitle-text floating"
             >
               <label
                 style={{

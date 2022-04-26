@@ -7,6 +7,10 @@
 @menu-item-active-bg: white;
 @menu-highlight-color: white;
 
+@color-bg-1: #a74372;
+@color-bg-2: #218574;
+@color-bg-3: #175c9c;
+
 .custom-text {
   color: @primary-color !important;
 }
@@ -45,6 +49,20 @@
   height: 100%;
 }
 
+.title-text { 
+  font-size: 115px;
+  font-weight: bold;
+  color: white;
+  opacity: 0.8
+}
+
+.subtitle-text { 
+  font-size: 25px;
+  margin-top: -45px;
+  font-weight: bold;
+  color: white;
+}
+
 .floating { 
   animation-name: floating;
   animation-duration: 8s;
@@ -56,4 +74,13 @@
   0% { transform: translate(0,  0px); }
   50%  { transform: translate(0, 15px); }
   100%   { transform: translate(0, -0px); }   
+}
+
+@media screen and (max-width: 600px) {
+  .title-text {
+    font-size: 65px;
+  }
+  .subtitle-text{
+    margin-top: -25px;
+  }
 }
