@@ -1,0 +1,59 @@
+@import "~antd/lib/style/themes/default.less";
+@import "~antd/dist/antd.less";
+
+@primary-color: #a74372;
+@menu-bg: @primary-color;
+@menu-item-color: white;
+@menu-item-active-bg: white;
+@menu-highlight-color: white;
+
+.custom-text {
+  color: @primary-color !important;
+}
+
+.custom-bg {
+  //background: @primary-color !important;
+  color: white;
+}
+
+.linked-animate-demo-wrapper {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: @primary-color;
+  opacity: 0.95;
+
+}
+
+.linked-animate-demo-box {
+  position: absolute;
+  width: 1280px;
+  height: 600px;
+  display: block;
+  margin: auto;
+}
+
+.linked-animate-demo-block {
+  position: absolute;
+  transition: transform .95s ease;
+}
+
+.linked-animate-demo-block-child {
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.floating { 
+  animation-name: floating;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }   
+}
