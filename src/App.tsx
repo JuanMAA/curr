@@ -43,14 +43,14 @@ export default function App() {
                 opacity: 0.8,
               }}
             >
-              gabbo
+              {document.domain.replace("www.", "").split(".")[0]}
               <label
                 className="floating"
                 style={{
                   opacity: 0.5,
                 }}
               >
-                .dev
+                .{document.domain.replace("www.", "").split(".")[1]}
               </label>
             </div>
             <div
