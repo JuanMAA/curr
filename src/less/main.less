@@ -5,12 +5,22 @@
 @color-rdm: if((@bgNum = 1), #b8613f, if((@bgNum = 2), #1786a1, #b44b85)); 
 
 @primary-color: @color-rdm; 
-@menu-item-color: white;
+@menu-item-color: rgba(255, 255, 255, 0.178);
 @menu-item-active-bg: white;
 @menu-highlight-color: white;
 
 //@btn-primary-color: @primary-color;
-//@btn-primary-bg: #fff;
+@btn-primary-bg: rgba(255, 255, 255, 0.123);
+@btn-border-style:none;
+@btn-font-weight: 500;
+
+.ant-btn-primary:focus{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ant-btn-primary:hover{
+  background: rgba(255, 255, 255, 0.2);
+}
 
 .custom-text {
   //width: ~`console.log("@{getNum}"), "@{getNum}"`;
