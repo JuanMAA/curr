@@ -1,23 +1,20 @@
 @import "~antd/lib/style/themes/default.less";
 @import "~antd/dist/antd.less";
 
-@primaryNum: `Math.floor(Math.floor(Math.random() * 3) + 1)`;
-@bgNum: `Math.floor(Math.floor(Math.random() * 3) + 1)`;
+@bgNum: `Math.floor(Math.random() * 3) + 1`;
+@color-rdm: if((@bgNum = 1), #b8613f, if((@bgNum = 2), #1786a1, #b44b85)); 
 
-@primary-color: if((@primaryNum = 1), #a74372, if((@primaryNum = 2), #218574, #175c9c));
-@menu-bg: if((@bgNum = 1), #a74372, if((@bgNum = 2), #218574, #175c9c));
+@primary-color: @color-rdm; 
 @menu-item-color: white;
 @menu-item-active-bg: white;
 @menu-highlight-color: white;
 
+//@btn-primary-color: @primary-color;
+//@btn-primary-bg: #fff;
+
 .custom-text {
   //width: ~`console.log("@{getNum}"), "@{getNum}"`;
   color: @primary-color !important;
-}
-
-.custom-bg {
-  //background: @primary-color !important;
-  color: white;
 }
 
 .linked-animate-demo-wrapper {
@@ -25,7 +22,7 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background: if((@bgNum = 1), #a74372, if((@bgNum = 2), #218574, #175c9c));
+  background: @primary-color;
   opacity: 0.95;
 
 }
