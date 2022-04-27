@@ -1,17 +1,17 @@
 @import "~antd/lib/style/themes/default.less";
 @import "~antd/dist/antd.less";
 
-@primary-color: #a74372;
+@getNum: `Math.floor(Math.floor(Math.random() * 3) + 1)`;
+
+
+@primary-color: if((@getNum = 1), #a74372, if((@getNum = 2), #218574, #175c9c));
 @menu-bg: @primary-color;
 @menu-item-color: white;
 @menu-item-active-bg: white;
 @menu-highlight-color: white;
 
-@color-bg-1: #a74372;
-@color-bg-2: #218574;
-@color-bg-3: #175c9c;
-
 .custom-text {
+  //width: ~`console.log("@{getNum}"), "@{getNum}"`;
   color: @primary-color !important;
 }
 
