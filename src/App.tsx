@@ -41,7 +41,7 @@ export default function App() {
               <label
                 className="floating"
                 style={{
-                  opacity: 0.5,
+                  opacity: 0.6,
                 }}
               >
                 .{document.domain.replace("www.", "").split(".")[1]}
@@ -53,7 +53,7 @@ export default function App() {
             >
               <label
                 style={{
-                  opacity: 0.8,
+                  opacity: 0.6,
                 }}
               >
                 FULL STACK DEVELOPER
@@ -64,7 +64,7 @@ export default function App() {
                 <Button
                   key="a"
                   type="primary"
-                  size="middle"
+                  size="large"
                   shape="circle"
                   style={{ margin: 3 }}
                 >
@@ -73,7 +73,7 @@ export default function App() {
                 <Button
                   key="b"
                   type="primary"
-                  size="middle"
+                  size="large"
                   shape="circle"
                   style={{ margin: 3 }}
                 >
@@ -82,7 +82,7 @@ export default function App() {
                 <Button
                   key="c"
                   type="primary"
-                  size="middle"
+                  size="large"
                   shape="circle"
                   style={{ margin: 3 }}
                 >
@@ -91,7 +91,7 @@ export default function App() {
                 <Button
                   key="d"
                   type="primary"
-                  size="middle"
+                  size="large"
                   shape="circle"
                   style={{ margin: 3 }}
                 >
