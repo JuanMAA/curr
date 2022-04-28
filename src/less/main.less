@@ -1,8 +1,8 @@
 @import "~antd/lib/style/themes/default.less";
 @import "~antd/dist/antd.less";
 
-@bgNum: `Math.floor(Math.random() * 3) + 1`;
-@color-rdm: if((@bgNum = 1), #b8613f, if((@bgNum = 2), #1786a1, #b44b85)); 
+@bgNum: `Math.floor(Math.floor(Math.random() * 3) + 1)`;
+@color-rdm: if((@bgNum = 1), #b8613f, if((@bgNum = 2), #b44b85, #1786a1)); 
 
 @primary-color: @color-rdm; 
 @menu-item-color: rgba(255, 255, 255, 0.178);
@@ -85,7 +85,7 @@
 
 @media screen and (max-width: 600px) {
   .title-text {
-    font-size: 65px;
+    font-size: 70px;
   }
   .subtitle-text{
     margin-top: -20px;
