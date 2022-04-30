@@ -2,19 +2,20 @@ import "./App.css";
 import { Col, Row } from "antd";
 import { Button } from "antd";
 import {
-  BehanceOutlined,
   GithubOutlined,
-  HomeOutlined,
   InstagramOutlined,
-  MenuUnfoldOutlined,
+  LinkedinOutlined,
   PlusOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
 import QueueAnim from "rc-queue-anim";
 import "./less/main.less";
-import { LinkedAnimate } from "./components/LinkedAnimated";
 
 export default function App() {
+  window.document.title = `${
+    document.domain.replace("www.", "").split(".")[0]
+  }.${document.domain.replace("www.", "").split(".")[1]} - developer`;
+
   return (
     <>
       <Row
@@ -33,10 +34,7 @@ export default function App() {
           xl={24}
         >
           <QueueAnim delay={800}>
-            <div
-              className="floating title-text"
-              key="a"
-            >
+            <div className="floating title-text" key="a">
               {document.domain.replace("www.", "").split(".")[0]}
               <label
                 className="floating"
@@ -47,10 +45,7 @@ export default function App() {
                 .{document.domain.replace("www.", "").split(".")[1]}
               </label>
             </div>
-            <div
-              key="b"
-              className="subtitle-text floating"
-            >
+            <div key="b" className="subtitle-text floating">
               <label
                 style={{
                   opacity: 0.6,
@@ -67,8 +62,12 @@ export default function App() {
                   size="large"
                   shape="circle"
                   style={{ margin: 3 }}
+                  target={"_blank"}
+                  href={
+                    "https://www.linkedin.com/in/juangabrielmansillaasenjo/"
+                  }
                 >
-                  <BehanceOutlined />
+                  <LinkedinOutlined />
                 </Button>
                 <Button
                   key="b"
@@ -76,6 +75,8 @@ export default function App() {
                   size="large"
                   shape="circle"
                   style={{ margin: 3 }}
+                  target={"_blank"}
+                  href={"https://github.com/JuanMAA"}
                 >
                   <GithubOutlined />
                 </Button>
@@ -85,6 +86,8 @@ export default function App() {
                   size="large"
                   shape="circle"
                   style={{ margin: 3 }}
+                  target={"_blank"}
+                  href={"https://www.instagram.com/juanmansillaasenjo/"}
                 >
                   <InstagramOutlined />
                 </Button>
