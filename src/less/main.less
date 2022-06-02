@@ -2,7 +2,7 @@
 @import "~antd/dist/antd.less";
 
 @bgNum: `Math.floor(Math.floor(Math.random() * 3) + 1)`;
-@color-rdm: if((@bgNum = 1), #aac740, if((@bgNum = 2), #4478c7, #1786a1)); 
+@color-rdm: if((@bgNum = 1), #b8613f, if((@bgNum = 2), #b44b85, #1786a1)); 
 
 @primary-color: @color-rdm; 
 @menu-item-color: rgba(255, 255, 255, 0.178);
@@ -23,7 +23,6 @@
 }
 
 .custom-text {
-  //width: ~`console.log("@{getNum}"), "@{getNum}"`;
   color: @primary-color !important;
 }
 
