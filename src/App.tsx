@@ -57,19 +57,6 @@ export default function App() {
             <div key="c" className="floating">
               <QueueAnim delay={300}>
                 <Button
-                  key="a"
-                  type="primary"
-                  size="large"
-                  shape="circle"
-                  style={{ margin: 3 }}
-                  target={"_blank"}
-                  href={
-                    "https://www.linkedin.com/in/juangabrielmansillaasenjo/"
-                  }
-                >
-                  <LinkedinOutlined />
-                </Button>
-                <Button
                   key="b"
                   type="primary"
                   size="large"
@@ -101,14 +88,28 @@ export default function App() {
                   <TwitterOutlined />
                 </Button>
                 <Button
+                  key="a"
+                  type="primary"
+                  size="large"
+                  shape="circle"
+                  style={{ margin: 3 }}
+                  target={"_blank"}
+                  href={
+                    "https://www.linkedin.com/in/juangabrielmansillaasenjo/"
+                  }
+                >
+                  <LinkedinOutlined />
+                </Button>
+                <Button
                   key="e"
                   type="primary"
-                  size={"middle"}
+                  size={"large"}
                   shape="round"
-                  hidden={true}
+                  href="https://system.gabbo.dev/"
+                  target={"_blank"}
                   style={{ marginTop: 20, marginLeft: 5 }}
                 >
-                  Conocer más <PlusOutlined />
+                  Portafolio <PlusOutlined /> 
                 </Button>
               </QueueAnim>
             </div>
