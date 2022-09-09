@@ -13,10 +13,10 @@ export default function Router() {
         <Routes>
           <>
             <Route path="/" element={<App />} />
-            <Route path="/works" element={<></>} />
-            <Route path="/portafolio" element={<WorksComponent/>} />
-            <Route path="/experience" element={<ExperienceComponent />} />
-            <Route path="/skils" element={<SkillsComponent />} />
+            {/*<Route path="/works" element={<></>} />}
+            {/*<Route path="/portafolio" element={<WorksComponent/>} />*/}
+            {/*<Route path="/experience" element={<ExperienceComponent />} />*/}
+            {/*<Route path="/skils" element={<SkillsComponent />} />*/}
           </>
         </Routes>
       </LayoutComponent>

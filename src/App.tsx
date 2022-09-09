@@ -10,11 +10,11 @@ import {
 } from "@ant-design/icons";
 import QueueAnim from "rc-queue-anim";
 import "./less/main.less";
+import { useEffect } from "react";
 
 export default function App() {
-  window.document.title = `${
-    document.domain.replace("www.", "").split(".")[0]
-  }.${document.domain.replace("www.", "").split(".")[1]} - developer`;
+  window.document.title = `${document.domain.replace("www.", "").split(".")[0]
+    }.${document.domain.replace("www.", "").split(".")[1]} - developer`;
 
   return (
     <>
@@ -57,6 +57,7 @@ export default function App() {
             <div key="c" className="floating">
               <QueueAnim delay={300}>
                 <Button
+                  hidden
                   key="b"
                   type="primary"
                   size="large"
@@ -74,7 +75,7 @@ export default function App() {
                   shape="circle"
                   style={{ margin: 3 }}
                   target={"_blank"}
-                  href={"https://www.instagram.com/juanmansillaasenjo/"}
+                  href={"https://www.instagram.com/gabbo.dev/"}
                 >
                   <InstagramOutlined />
                 </Button>
@@ -84,6 +85,8 @@ export default function App() {
                   size="large"
                   shape="circle"
                   style={{ margin: 3 }}
+                  target={"_blank"}
+                  href={"https://www.twitter.com/gabbodev/"}
                 >
                   <TwitterOutlined />
                 </Button>
@@ -109,7 +112,7 @@ export default function App() {
                   target={"_blank"}
                   style={{ marginTop: 20, marginLeft: 5 }}
                 >
-                  Portafolio <PlusOutlined /> 
+                  Portafolio <PlusOutlined />
                 </Button>
               </QueueAnim>
             </div>
