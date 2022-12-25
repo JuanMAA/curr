@@ -51,7 +51,7 @@ export default function App() {
                   opacity: 0.6,
                 }}
               >
-                FULL STACK DEVELOPER
+                DEVELOPER
               </label>
             </div>
             <div key="c" className="floating">
@@ -111,6 +111,7 @@ export default function App() {
                   href="https://system.gabbo.dev/"
                   target={"_blank"}
                   style={{ marginTop: 20, marginLeft: 5 }}
+                  hidden
                 >
                   Portafolio <PlusOutlined />
                 </Button>

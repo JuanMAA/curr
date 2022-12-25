@@ -4,7 +4,6 @@ import ExperienceComponent from "../components/Experience";
 import LayoutComponent from "../components/Layout";
 import SkillsComponent from "../components/Skills";
 import WorksComponent from "../components/Works";
-import {LinkedAnimate} from "../components/LinkedAnimated";
 
 export default function Router() {
   return (

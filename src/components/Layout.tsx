@@ -9,6 +9,7 @@ import {
   SolutionOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { useWindowSize } from "@react-hook/window-size";
 import { Button, Menu, Switch } from "antd";
 import { Content } from "antd/lib/layout/layout";
 import QueueAnim from "rc-queue-anim";
@@ -20,11 +21,14 @@ type Props = {
 };
 
 export default function LayoutComponent(props: Props) {
+
+  const [width, height] = useWindowSize()
+
   return (
     <>
     <div>
     <QueueAnim delay={800}>
-    <LinkedAnimate />
+    <LinkedAnimate width={width}  heigth={height}/>
     </QueueAnim>
     </div>
       <div

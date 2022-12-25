@@ -1,6 +1,6 @@
 import TweenOne from "rc-tween-one";
-import ReactDOM from 'react-dom'
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { iconsSvg } from "./SvgList"
 
 class GridLayout {
   constructor(rect, width, height) {
@@ -55,7 +55,7 @@ const getPointPos = (width, height, length) => {
   const grid = new GridLayout(10, width, height);
   const posArray = [];
   const num = 300;
-  const radiusArray = [10, 35, 100];
+  const radiusArray = [20, 45, 100];
   for (let i = 0; i < length; i += 1) {
     let radius;
     let pos;
@@ -82,7 +82,7 @@ const getDistance = (t, a) =>
 
 class Point extends React.PureComponent {
   render() {
-    const { tx, ty, x, y, opacity, backgroundColor, radius, ...props } =
+    const { icons, tx, ty, x, y, opacity, backgroundColor, radius, ...props } =
       this.props;
     let transform;
     let zIndex = 0;
@@ -96,17 +96,18 @@ class Point extends React.PureComponent {
     if (tx && ty) {
       if (tx !== x && ty !== y) {
         const distance = getDistance({ x, y }, { x: tx, y: ty });
-        const g = Math.sqrt(2000000 / (0.1 * distance * distance));
-        transform = `translate(${(g * (x - tx)) / distance}px, ${
-          (g * (y - ty)) / distance
-        }px)`;
+        const g = Math.sqrt(2000000 / (0.9 * distance * distance));
+        transform = `translate(${(g * (x - tx)) / distance}px, ${(g * (y - ty)) / distance
+          }px)`;
       } else if (tx === x && ty === y) {
         transform = `scale(${80 / radius})`;
-        animation = { y: 0, yoyo: false, repeat: 0, duration: 300 };
+        animation = { y: 0, yoyo: false, repeat: 0, duration: 200 };
         zIndex = 1;
       }
     }
+
     return (
+
       <div
         style={{
           left: x - radius,
@@ -116,6 +117,7 @@ class Point extends React.PureComponent {
           opacity,
           zIndex,
           transform,
+          color: "white",
         }}
         {...props}
       >
@@ -123,27 +125,40 @@ class Point extends React.PureComponent {
           animation={animation}
           style={{
             backgroundColor,
+            fontSize: (radius * 1.5),
+            height: "100%"
           }}
-          className={`${this.props.className}-child`}
-        />
+          className={`${this.props.className}-child txt-primary-color`}
+        >
+          <div style={{
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "20%"
+          }}>
+              { icons ? <img className="txt-primary-color" style={{ width:"100%" }} src={icons} alt="N/A" /> : <></> }
+          </div>
+        </TweenOne>
       </div>
     );
   }
 }
+
 
 export class LinkedAnimate extends React.Component {
   static defaultProps = {
     className: "linked-animate-demo",
   };
 
-  num = 200; // 点的个数
+  num = iconsSvg.length; // CANTIDAD
 
   constructor(props) {
     super(props);
     this.state = {
-      data: getPointPos(2000, 1600, this.num).map((item) => ({
+      data: getPointPos(props.width, props.heigth, this.num).map((item) => ({
         ...item,
-        opacity: Math.random() * 0.1 + 0.01,
+        opacity: Math.random() * 0.1 + 0.05,
         backgroundColor: `white`,
       })),
       tx: 0,
@@ -192,6 +207,7 @@ export class LinkedAnimate extends React.Component {
   render() {
     const { className } = this.props;
     const { data, tx, ty } = this.state;
+
     return (
       <div className={`${className}-wrapper`}>
         <div
@@ -205,6 +221,7 @@ export class LinkedAnimate extends React.Component {
           {data.map((item, i) => (
             <Point
               {...item}
+              icons={iconsSvg[i]}
               tx={tx}
               ty={ty}
               key={i.toString()}
