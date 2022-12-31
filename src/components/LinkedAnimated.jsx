@@ -1,9 +1,10 @@
 import TweenOne from "rc-tween-one";
 import React from "react";
 import { iconsSvg } from "./SvgList"
+import { random } from "../utils"
 
 class GridLayout {
-  constructor(rect, width, height) {
+  constructor(rect, width, height, id) {
     this.gridX = Math.floor(width / rect);
     this.gridY = Math.floor(height / rect);
     this.cellWidth = width / this.gridX;
@@ -56,7 +57,8 @@ const getPointPos = (width, height, length) => {
   const posArray = [];
   const num = 300;
   const radiusArray = [20, 45, 100];
-  for (let i = 0; i < length; i += 1) {
+  const large = length + (80 - length)
+  for (let i = 0; i < large; i += 1) {
     let radius;
     let pos;
     let j = 0;
@@ -128,7 +130,7 @@ class Point extends React.PureComponent {
             fontSize: (radius * 1.5),
             height: "100%"
           }}
-          className={`${this.props.className}-child txt-primary-color`}
+          className={`${this.props.className}-child color-style-`+random(4)}
         >
           <div style={{
             height: "100%",
@@ -137,7 +139,7 @@ class Point extends React.PureComponent {
             justifyContent: "center",
             padding: "20%"
           }}>
-              { icons ? <img className="txt-primary-color" style={{ width:"100%" }} src={icons} alt="N/A" /> : <></> }
+            {icons ? <img className={"color-style-"+random(4)} style={{ width: "100%" }} src={icons} alt="N/A" /> : <></>}
           </div>
         </TweenOne>
       </div>
@@ -145,24 +147,24 @@ class Point extends React.PureComponent {
   }
 }
 
-
 export class LinkedAnimate extends React.Component {
   static defaultProps = {
-    className: "linked-animate-demo",
+    className: `linked-animate-demo`,
   };
 
-  num = iconsSvg.length; // CANTIDAD
-
   constructor(props) {
+    console.log("props",props)
     super(props);
     this.state = {
-      data: getPointPos(props.width, props.heigth, this.num).map((item) => ({
-        ...item,
-        opacity: Math.random() * 0.1 + 0.05,
-        backgroundColor: `white`,
-      })),
+      data: getPointPos(props.width, props.heigth, iconsSvg?.filter((icon) => { icon?.profiles?.includes(props?.id?.replaceAll("-", " ")) }).length // CANTIDAD
+        , props.id).map((item) => ({
+          ...item,
+          opacity: Math.random() * 0.1 + 0.05,
+          backgroundColor: `white`,
+        })),
       tx: 0,
       ty: 0,
+      id: props?.id
     };
   }
 
@@ -209,7 +211,7 @@ export class LinkedAnimate extends React.Component {
     const { data, tx, ty } = this.state;
 
     return (
-      <div className={`${className}-wrapper`}>
+      <div className={`${className}-wrapper background-style-${random(4)}`}>
         <div
           className={`${className}-box`}
           ref={(c) => {
@@ -221,7 +223,7 @@ export class LinkedAnimate extends React.Component {
           {data.map((item, i) => (
             <Point
               {...item}
-              icons={iconsSvg[i]}
+              icons={iconsSvg[i]?.image}
               tx={tx}
               ty={ty}
               key={i.toString()}

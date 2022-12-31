@@ -8,6 +8,7 @@ import {
 import { Col, Divider, Row, Tag, Timeline } from "antd";
 import Title from "antd/lib/typography/Title";
 import QueueAnim from "rc-queue-anim";
+import { random } from "../utils";
 
 export default function ExperienceComponent() {
   return (
@@ -32,9 +33,8 @@ export default function ExperienceComponent() {
               level={2}
               style={{
                 fontSize: 30,
-                fontWeight: "bold"
               }}
-              className="custom-text"
+              className={"color-style-"+random(3)}
             >
               EXPERIENCIA
             </Title>

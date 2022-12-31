@@ -4,6 +4,7 @@ import { WordCloud } from "@ant-design/plots";
 import Title from "antd/lib/typography/Title";
 import { Col, Divider, Row } from "antd";
 import QueueAnim from "rc-queue-anim";
+import { random } from "../utils";
 
 export default function SkillsComponent() {
   const [data, setData] = useState([
@@ -214,8 +215,8 @@ export default function SkillsComponent() {
                   fontWeight: "bold",
                   margin: 0,
                 }}
-                className="custom-text"
-              >
+                className={"color-style-"+random(4)}
+                >
                 SKILLS
               </Title>
             </div>

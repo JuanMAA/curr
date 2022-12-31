@@ -1,10 +1,10 @@
 @import "~antd/lib/style/themes/default.less";
 @import "~antd/dist/antd.less";
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&display=swap');
 
-@bgNum: `Math.floor(Math.floor(Math.random() * 3) + 1)`;
-@color-rdm: if((@bgNum = 1), #b8613f, if((@bgNum = 2), #b44b85, #1786a1)); 
-
-@primary-color: @color-rdm; 
 @menu-item-color: rgba(255, 255, 255, 0.178);
 @menu-item-active-bg: white;
 @menu-highlight-color: white;
@@ -14,13 +14,24 @@
 @btn-border-style:none;
 @btn-font-weight: 500;
 
-.txt-primary-color{
-  color: @primary-color !important;
-}
+@color-list: #338f9c, #bd5270, #437eb8, #b84f4f;
+@font-list: 'Montserrat Alternates', 'Lilita One', 'Poiret One' , 'Alegreya Sans SC';
 
-.fill-primary-color{
-  fill: @primary-color !important;
-}
+each(@color-list, {
+  .color-style-@{index} {
+    color: @value !important;
+  }
+  .background-style-@{index} {
+    background-color: @value !important;
+  }
+});
+
+each(@font-list, {
+  .font-style-@{index} {
+    font-family: @value !important;
+    font-weight: bold !important;
+  }
+});
 
 .ant-btn-primary:focus{
   background: rgba(255, 255, 255, 0.2);
@@ -30,16 +41,12 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-.custom-text {
-  color: @primary-color !important;
-}
-
 .linked-animate-demo-wrapper {
   overflow: hidden;
   height: 100%;
   width: 100%;
   position: absolute;
-  background: @primary-color;
+  //background: @primary-color;
   opacity: 0.95;
 
 }
@@ -65,7 +72,7 @@
 
 .title-text { 
   font-size: 115px;
-  font-weight: bold;
+  //font-weight: bold;
   color: white;
   opacity: 0.8
 }
@@ -73,7 +80,7 @@
 .subtitle-text { 
   font-size: 25px;
   margin-top: -45px;
-  font-weight: bold;
+  //font-weight: bold;
   color: white;
 }
 

@@ -10,15 +10,27 @@ import {
 } from "@ant-design/icons";
 import QueueAnim from "rc-queue-anim";
 import "./less/main.less";
-import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { random } from "./utils";
 
 export default function App() {
   window.document.title = `${document.domain.replace("www.", "").split(".")[0]
     }.${document.domain.replace("www.", "").split(".")[1]} - developer`;
+  let { id } = useParams();
+  const navigate = useNavigate();
+
+
+  const [viewModal, setViewModal] = useState(true);
+
+  useEffect(()=>{
+    if(!id) navigate('/developer');
+  },[])
 
   return (
     <>
       <Row
+        className={"font-style-" + random(4)}
         style={{
           height: "100%",
           width: "100%",
@@ -34,15 +46,17 @@ export default function App() {
           xl={24}
         >
           <QueueAnim delay={800}>
-            <div className="floating title-text" key="a">
-              {document.domain.replace("www.", "").split(".")[0]}
+            <div className="floating title-text" key="a" style={{
+              paddingBottom: 1
+            }}>
+              {document.domain.replace("www.", "").split(".")[0].replace(/(^\w{1})|(\s+\w{1})/g, letra => letra.toUpperCase())}
               <label
                 className="floating"
                 style={{
                   opacity: 0.6,
                 }}
               >
-                .{document.domain.replace("www.", "").split(".")[1]}
+                .dev
               </label>
             </div>
             <div key="b" className="subtitle-text floating">
@@ -50,14 +64,14 @@ export default function App() {
                 style={{
                   opacity: 0.6,
                 }}
+                //className={"font-style-" + random(4)}
               >
-                DEVELOPER
+                {id?.replaceAll("-", " ").replace(/(^\w{1})|(\s+\w{1})/g, letra => letra.toUpperCase())}
               </label>
             </div>
-            <div key="c" className="floating">
+            <div key="c" className="floating" style={{ padding: 5 }}>
               <QueueAnim delay={300}>
                 <Button
-                  hidden
                   key="b"
                   type="primary"
                   size="large"
@@ -75,7 +89,7 @@ export default function App() {
                   shape="circle"
                   style={{ margin: 3 }}
                   target={"_blank"}
-                  href={"https://www.instagram.com/gabbo.dev/"}
+                  href={"https://www.instagram.com/juanmansillaasenjo/"}
                 >
                   <InstagramOutlined />
                 </Button>
@@ -85,8 +99,6 @@ export default function App() {
                   size="large"
                   shape="circle"
                   style={{ margin: 3 }}
-                  target={"_blank"}
-                  href={"https://www.twitter.com/gabbodev/"}
                 >
                   <TwitterOutlined />
                 </Button>
@@ -108,16 +120,22 @@ export default function App() {
                   type="primary"
                   size={"large"}
                   shape="round"
-                  href="https://system.gabbo.dev/"
-                  target={"_blank"}
+                  //href="https://system.gabbo.dev/"
+                  //target={"_blank"}
                   style={{ marginTop: 20, marginLeft: 5 }}
+                  onClick={() => setViewModal(!viewModal)}
                   hidden
                 >
-                  Portafolio <PlusOutlined />
+                  Ver Skills
                 </Button>
               </QueueAnim>
             </div>
           </QueueAnim>
+        </Col>
+        <Col style={{
+          width: "60%", height: "60%", background: "white", margin: "auto"
+        }} hidden={viewModal}>
+
         </Col>
       </Row>
     </>

@@ -13,7 +13,7 @@ import { useWindowSize } from "@react-hook/window-size";
 import { Button, Menu, Switch } from "antd";
 import { Content } from "antd/lib/layout/layout";
 import QueueAnim from "rc-queue-anim";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { LinkedAnimate } from "./LinkedAnimated";
 
 type Props = {
@@ -23,14 +23,15 @@ type Props = {
 export default function LayoutComponent(props: Props) {
 
   const [width, height] = useWindowSize()
+  let { id } = useParams();
 
   return (
     <>
-    <div>
-    <QueueAnim delay={800}>
-    <LinkedAnimate width={width}  heigth={height}/>
-    </QueueAnim>
-    </div>
+      <div>
+        <QueueAnim delay={800}>
+          <LinkedAnimate width={width} heigth={height} />
+        </QueueAnim>
+      </div>
       <div
         style={{
           margin: "auto",
