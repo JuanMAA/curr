@@ -55,7 +55,7 @@ class GridLayout {
 const getPointPos = (width, height, length) => {
   const grid = new GridLayout(10, width, height);
   const posArray = [];
-  const num = 110;
+  const num = 90;
   const radiusArray = [20, 45, 100];
   const large = length + (80 - length)
   for (let i = 0; i < large; i += 1) {
