@@ -23,9 +23,9 @@ export default function App() {
 
   const [viewModal, setViewModal] = useState(true);
 
-  useEffect(()=>{
-    if(!id) navigate('/developer');
-  },[])
+  useEffect(() => {
+    if (!id) navigate('/developer');
+  }, [])
 
   return (
     <>
@@ -45,7 +45,6 @@ export default function App() {
           }}
           xl={24}
         >
-          <QueueAnim delay={800}>
             <div className="floating title-text" key="a" style={{
               paddingBottom: 1
             }}>
@@ -64,73 +63,72 @@ export default function App() {
                 style={{
                   opacity: 0.6,
                 }}
-                //className={"font-style-" + random(4)}
+              //className={"font-style-" + random(4)}
               >
                 {id?.replaceAll("-", " ").replace(/(^\w{1})|(\s+\w{1})/g, letra => letra.toUpperCase())}
               </label>
             </div>
+
             <div key="c" className="floating" style={{ padding: 5 }}>
-              <QueueAnim delay={300}>
-                <Button
-                  key="b"
-                  type="primary"
-                  size="large"
-                  shape="circle"
-                  style={{ margin: 3 }}
-                  target={"_blank"}
-                  href={"https://github.com/JuanMAA"}
-                >
-                  <GithubOutlined />
-                </Button>
-                <Button
-                  key="c"
-                  type="primary"
-                  size="large"
-                  shape="circle"
-                  style={{ margin: 3 }}
-                  target={"_blank"}
-                  href={"https://www.instagram.com/juanmansillaasenjo/"}
-                >
-                  <InstagramOutlined />
-                </Button>
-                <Button
-                  key="d"
-                  type="primary"
-                  size="large"
-                  shape="circle"
-                  style={{ margin: 3 }}
-                >
-                  <TwitterOutlined />
-                </Button>
-                <Button
-                  key="a"
-                  type="primary"
-                  size="large"
-                  shape="circle"
-                  style={{ margin: 3 }}
-                  target={"_blank"}
-                  href={
-                    "https://www.linkedin.com/in/juangabrielmansillaasenjo/"
-                  }
-                >
-                  <LinkedinOutlined />
-                </Button>
-                <Button
-                  key="e"
-                  type="primary"
-                  size={"large"}
-                  shape="round"
-                  //href="https://system.gabbo.dev/"
-                  //target={"_blank"}
-                  style={{ marginTop: 20, marginLeft: 5 }}
-                  onClick={() => setViewModal(!viewModal)}
-                  hidden
-                >
-                  Ver Skills
-                </Button>
-              </QueueAnim>
+              <Button
+                key="b"
+                type="primary"
+                size="large"
+                shape="circle"
+                style={{ margin: 3 }}
+                target={"_blank"}
+                href={"https://github.com/JuanMAA"}
+              >
+                <GithubOutlined />
+              </Button>
+              <Button
+                key="c"
+                type="primary"
+                size="large"
+                shape="circle"
+                style={{ margin: 3 }}
+                target={"_blank"}
+                href={"https://www.instagram.com/juanmansillaasenjo/"}
+              >
+                <InstagramOutlined />
+              </Button>
+              <Button
+                key="d"
+                type="primary"
+                size="large"
+                shape="circle"
+                style={{ margin: 3 }}
+              >
+                <TwitterOutlined />
+              </Button>
+              <Button
+                key="a"
+                type="primary"
+                size="large"
+                shape="circle"
+                style={{ margin: 3 }}
+                target={"_blank"}
+                href={
+                  "https://www.linkedin.com/in/juangabrielmansillaasenjo/"
+                }
+              >
+                <LinkedinOutlined />
+              </Button>
+              <Button
+                key="e"
+                type="primary"
+                size={"large"}
+                shape="round"
+                //href="https://system.gabbo.dev/"
+                //target={"_blank"}
+                style={{ marginTop: 20, marginLeft: 5 }}
+                onClick={() => setViewModal(!viewModal)}
+                hidden
+              >
+                Ver Skills
+              </Button>
             </div>
-          </QueueAnim>
+
         </Col>
         <Col style={{
           width: "60%", height: "60%", background: "white", margin: "auto"
