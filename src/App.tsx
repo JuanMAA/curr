@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import { random } from "./utils";
 
 export default function App() {
-  window.document.title = `${document.domain.replace("www.", "").split(".")[0]
+  window.document.title = `${document.domain.replace("www.", "").split(".")[0].replace(/(^\w{1})|(\s+\w{1})/g, letra => letra.toUpperCase())
     }.${document.domain.replace("www.", "").split(".")[1]} - developer`;
   let { id } = useParams();
   const navigate = useNavigate();
@@ -48,7 +48,11 @@ export default function App() {
             <div className="floating title-text" key="a" style={{
               paddingBottom: 1
             }}>
-              {document.domain.replace("www.", "").split(".")[0].replace(/(^\w{1})|(\s+\w{1})/g, letra => letra.toUpperCase())}
+              {
+                document.domain.replace("www.", "")
+                    .split(".")[0]
+                    .replace(/(^\w{1})|(\s+\w{1})/g, letra => letra.toUpperCase())
+              }
               <label
                 className="floating"
                 style={{
