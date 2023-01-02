@@ -56,7 +56,7 @@ export default function App() {
                   opacity: 0.6,
                 }}
               >
-                .dev
+                .{document.domain.replace("www.", "").split(".")[1]}
               </label>
             </div>
             <div key="b" className="subtitle-text floating">

@@ -1,9 +1,5 @@
 @import "~antd/lib/style/themes/default.less";
 @import "~antd/dist/antd.less";
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&display=swap');
 
 @menu-item-color: rgba(255, 255, 255, 0.178);
 @menu-item-active-bg: white;
@@ -13,9 +9,39 @@
 @btn-primary-bg: rgba(255, 255, 255, 0.123);
 @btn-border-style:none;
 @btn-font-weight: 500;
+@path-fonts:  '/fonts';
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('../fonts/Archivo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('../fonts/Prompt.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/Quicksand.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('../fonts/Sora.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @color-list: #338f9c, #bd5270, #437eb8, #b84f4f;
-@font-list: 'Montserrat Alternates', 'Lilita One', 'Poiret One' , 'Alegreya Sans SC';
+@font-list: 'Archivo', 'Prompt', 'Quicksand' , 'Sora';
 
 each(@color-list, {
   .color-style-@{index} {
