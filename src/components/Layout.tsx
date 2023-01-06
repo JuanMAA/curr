@@ -29,7 +29,7 @@ export default function LayoutComponent(props: Props) {
     <>
       <div>
         <QueueAnim delay={800}>
-          <LinkedAnimate width={width} heigth={height} />
+          <LinkedAnimate width={width > 600 ? width: 900} heigth={height} />
         </QueueAnim>
       </div>
       <div
