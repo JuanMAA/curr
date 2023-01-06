@@ -55,7 +55,7 @@ class GridLayout {
 const getPointPos = (width, height, length) => {
   const grid = new GridLayout(10, width, height);
   const posArray = [];
-  const num = 90;
+  const num = 60;
   const radiusArray = [20, 45, 100];
   const large = length + (80 - length)
   for (let i = 0; i < large; i += 1) {
@@ -153,7 +153,6 @@ export class LinkedAnimate extends React.Component {
   };
 
   constructor(props) {
-    console.log("props",props)
     super(props);
     this.state = {
       data: getPointPos(props.width, props.heigth, iconsSvg?.filter((icon) => { icon?.profiles?.includes(props?.id?.replaceAll("-", " ")) }).length // CANTIDAD
